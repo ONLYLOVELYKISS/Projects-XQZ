@@ -1,0 +1,29 @@
+# Project: 用sizeof计算一维数组的元素个数
+# Makefile created by Dev-C++ 6.5
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o
+LINKOBJ  = main.o
+LIBS     = -L"D:/软件/Dev-Cpp/MinGW32/lib" -L"D:/软件/Dev-Cpp/MinGW32/i686-w64-mingw32/lib" -static-libstdc++ -static-libgcc -pg
+INCS     = -I"D:/软件/Dev-Cpp/MinGW32/include" -I"D:/软件/Dev-Cpp/MinGW32/i686-w64-mingw32/include" -I"D:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include" -I"D:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include-fixed"
+CXXINCS  = -I"D:/软件/Dev-Cpp/MinGW32/include" -I"D:/软件/Dev-Cpp/MinGW32/i686-w64-mingw32/include" -I"D:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include" -I"D:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include-fixed" -I"D:/软件/Dev-Cpp/MinGW32/include/c++/10.2.0" -I"D:/软件/Dev-Cpp/MinGW32/include/c++/10.2.0/i686-w64-mingw32" -I"D:/软件/Dev-Cpp/MinGW32/include/c++/10.2.0/backward"
+BIN      = 用sizeof计算一维数组的元素个数.exe
+CXXFLAGS = $(CXXINCS) -pg
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=gbk
+CFLAGS   = $(INCS) -pg
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS) 
